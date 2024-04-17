@@ -18,20 +18,18 @@ header {
     background: #5372F0;
     /* padding: 18px 10px; */
     text-align: center;
+    align-items: center;
     justify-content: space-between;
-
 }
 
 .logo {
-    padding-left: 15px;
+    padding-left: 30px;
     padding-top: 20px;
     padding-bottom: 20px;
 }
 
 h1 {
     color: white;
-    align-items: center;
-    justify-content: center;
     padding-top: 20px;
     padding-bottom: 20px;
 
@@ -49,8 +47,11 @@ h1 {
 .nav-component__celcius-block {
     top: 30px;
     right: 30px;
-    margin: 10px 20px;
-    padding-top: 16px;
+    padding-right: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    /* margin: 10px 20px;
+    padding-top: 16px; */
 }
 
 .checkbox {
@@ -259,11 +260,31 @@ h1 {
     .weather-cards .card {
         width: calc(100% / 3 - 15px);
     }
+
+    header {
+            /* padding: 15px 0; */
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    h1 {
+        font-size: 1.45rem;
+    }
 }
 
 @media (max-width: 950px) {
     .weather-input {
         width: 450px;
+    }
+
+    header {
+            /* padding: 15px 0; */
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    h1 {
+        font-size: 1.4rem;
     }
 
     .weather-cards .card {
@@ -273,10 +294,22 @@ h1 {
 
 @media (max-width: 750px) {
     h1 {
-        font-size: 1.45rem;
+        font-size: 1.3rem;
         /* padding: 15px 0; */
         padding-top: 10px;
         padding-bottom: 10px;
+    }
+
+    header {
+        width: 100%;
+    }
+    
+    .logo {
+        padding-left: 10px;
+    }
+    
+    .nav-component__celcius-block {
+        padding-right: 10px;
     }
 
     .container {
@@ -289,6 +322,6 @@ h1 {
     }
 
     .weather-data h2 {
-        font-size: 1.35rem;
+        font-size: 1.25rem;
     }
 }
