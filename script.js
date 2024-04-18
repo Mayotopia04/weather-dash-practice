@@ -9,34 +9,32 @@ const API_KEY = "8ee2ad7d143d493202cede870fde3e7b"; //API key for OpenWeatherMap
 const createWeatherCard = (cityName, weatherItem, index) => {
     if (index === 0) { // HTML for the main weather card
         return `<div class="details">
-                    <h2>${cityName} (${weatherItem.dt_txt.split(" ")[0]})</h2>
+                    <h2>${cityName} ${weatherItem.dt_txt.split(" ")[0]}</h2>
                     <h4>Temperature: ${(weatherItem.main.temp - 273.15).toFixed(2)}°C</h4>
                     <h4>Wind: ${weatherItem.wind.speed} M/S</h4>
                     <h4>Humidity: ${weatherItem.main.humidity}%</h4>
                 </div>
                 
                 <div class="icon">
-                    <img src="https://openweathermap.org/img/wn/10d@4x.png" alt="">
+                    <img src="https://openweathermap.org/img/wn/${weatherItem.weather[0].icon}@4x.png" alt="">
                     <h4>${weatherItem.weather[0].description}</h4>
                 </div>`;
     } else { // HTML for the other 5 day forecast card
         return `<li class="card">
-                        <h3>(${weatherItem.dt_txt.split(" ")[0]})</h3>
+                        <h3>${weatherItem.dt_txt.split(" ")[0]}</h3>
                         <img src="https://openweathermap.org/img/wn/${weatherItem.weather[0].icon}@2x.png" alt="">
                         <h4>Temp: ${(weatherItem.main.temp - 273.15).toFixed(2)}°C</h4>
                         <h4>Wind: ${weatherItem.wind.speed} M/S</h4>
                         <h4>Humidity: ${weatherItem.main.humidity}%</h4>
                     </li>`;
-
-    }
-    
+    }   
 };
 
 const getWeatherDetails = (cityName, lat, lon) => {
     const WEATHER_API_URL = `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${API_KEY}`;
 
     fetch(WEATHER_API_URL).then(res => res.json()).then(data => {
-        //console.log(data);
+        console.log(data);
         //filter the forecasts to get only one forecast per day
         const uniqueForecastDays = [];
         const fiveDaysForecast = data.list.filter(forecast => {
@@ -45,10 +43,11 @@ const getWeatherDetails = (cityName, lat, lon) => {
                 return uniqueForecastDays.push(forecastDate);
             }
         });
+        console.log(fiveDaysForecast);
         // clearing previous weather data
         cityInput.value = "";
         currentWeatherDiv.innerHTML = "";
-        weatherCardsDiv.innerHTML = "";
+        weatherCardsDiv.innerHTML = ""; 
 
         // creating weather cards and adding them to the DOM
         fiveDaysForecast.forEach((weatherItem, index) => {
@@ -81,8 +80,6 @@ const getCityCoordinates = () => {
     }).catch(() => {
         alert("An error occurred while fetching coordinates!");
     });
-
-
 }
 
 const getUserCoordinates = () => {

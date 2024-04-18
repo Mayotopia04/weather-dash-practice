@@ -20,6 +20,11 @@ header {
     text-align: center;
     align-items: center;
     justify-content: space-between;
+
+    background-image: url(./image/background-yellowfl1.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .logo {
@@ -47,11 +52,13 @@ h1 {
 .nav-component__celcius-block {
     top: 30px;
     right: 30px;
+    /* margin: 10px 30px; */
+    /* padding-top: 25px;
+    padding-right: 30px; */
+
     padding-right: 30px;
     padding-top: 20px;
     padding-bottom: 20px;
-    /* margin: 10px 20px;
-    padding-top: 16px; */
 }
 
 .checkbox {
@@ -84,7 +91,7 @@ h1 {
     top: 2px;
     left: 2px;
     border-radius: 50%;
-    transition: transform 0.1s linear;
+    transition: transform 0.15s linear;
 }
 
 .checkbox:checked+.label .ball {
@@ -147,7 +154,7 @@ h1 {
     font-size: 1.18rem;
     padding: 0 15px;
     margin-top: -4px;
-    background: #E3F2FD;
+    background: #E4F3FD;
 }
 
 .weather-input button {
@@ -175,17 +182,32 @@ h1 {
     background: #5c636a;
 }
 
+
 .weather-data {
     width: 100%;
 }
 
-.weather-data .current-weather {
+/*also .current-weather*/
+/* .weather-data {
     color: #fff;
     background: #5372F0;
     border-radius: 5px;
     padding: 20px 70px 20px 20px;
     display: flex;
     justify-content: space-between;
+} */
+
+.weather-data .current-weather {
+    background-image: url(./image/background4.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    border-radius: 5px;
+    padding: 20px 70px 20px 20px;
+    display: flex;
+    justify-content: space-between;
+    color: black;
 }
 
 .current-weather h2 {
@@ -196,7 +218,7 @@ h1 {
 .weather-data h4 {
     margin-top: 12px;
     font-size: 1rem;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .current-weather .icon {
@@ -211,6 +233,7 @@ h1 {
 .current-weather .icon h4 {
     margin-top: -10px;
     text-transform: capitalize;
+    color: #FFF;
 }
 
 .days-forecast h2 {
@@ -224,17 +247,21 @@ h1 {
 }
 
 .weather-cards .card {
-    color: #fff;
+    color: black;
     padding: 18px 16px;
     list-style: none;
-    width: calc(100% / 4);
-    background: #6C757D;
+    width: calc(100% / 5);
+    /* background: #6C757D; */
+    background-image: url(./image/background1.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     border-radius: 5px;
 }
 
-.weather-cards .card h3 {
+.weather-cards .card h3 h4 {
     font-size: 1.3rem;
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .weather-cards .card img {
@@ -266,7 +293,7 @@ h1 {
         align-items: center;
         justify-content: space-between;
     }
-    
+
     h1 {
         font-size: 1.45rem;
     }
@@ -278,11 +305,11 @@ h1 {
     }
 
     header {
-            /* padding: 15px 0; */
+        /* padding: 15px 0; */
         align-items: center;
         justify-content: space-between;
     }
-    
+
     h1 {
         font-size: 1.4rem;
     }
@@ -303,11 +330,11 @@ h1 {
     header {
         width: 100%;
     }
-    
+
     .logo {
-        padding-left: 10px;
+        padding-left: 10px; 
     }
-    
+
     .nav-component__celcius-block {
         padding-right: 10px;
     }
